@@ -19,6 +19,7 @@
  */
 
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 namespace Oculus.Interaction
@@ -209,6 +210,8 @@ namespace Oculus.Interaction
             base.InteractableUnset(interactable);
         }
 
+        [SerializeField] private UnityEvent onSnapped;
+        private bool initialized = false;
         protected override void InteractableSelected(SnapInteractable interactable)
         {
             base.InteractableSelected(interactable);
@@ -219,6 +222,11 @@ namespace Oculus.Interaction
                 if (_movement != null)
                 {
                     GeneratePointerEvent(PointerEventType.Select);
+                    if (!initialized){
+                        initialized = true;
+                        return;
+                    }
+                    onSnapped?.Invoke();
                 }
             }
         }

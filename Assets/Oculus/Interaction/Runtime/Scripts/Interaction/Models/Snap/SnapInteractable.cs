@@ -139,7 +139,6 @@ namespace Oculus.Interaction
                     interactor.SnapPose,
                     out result);
             }
-
             result = this.transform.GetPose();
             return true;
         }
