@@ -207,7 +207,7 @@ namespace Oculus.Interaction
             }
         }
 
-        public bool CanBeSelectedBy(TInteractor interactor)
+        public virtual bool CanBeSelectedBy(TInteractor interactor)
         {
             if (State == InteractableState.Disabled)
             {

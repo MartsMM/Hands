@@ -56,7 +56,7 @@ namespace Oculus.Interaction
             }
         }
 
-        public bool Filter(GameObject gameObject)
+        public virtual bool Filter(GameObject gameObject)
         {
             bool hasTagSet = gameObject.TryGetComponent(out TagSet tagSet);
             if (!hasTagSet && _requireTagSet.Count > 0)
