@@ -60,7 +60,7 @@ namespace Oculus.Interaction.HandGrab
         {
             _travellingData = travellingData;
         }
-
+        
         public void MoveTo(Pose target)
         {
             _target = target;

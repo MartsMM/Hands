@@ -38,6 +38,8 @@ namespace Oculus.Interaction
 
         public bool Stopped => _tweenCurves.TrueForAll(t => t.PrevProgress >= 1f);
 
+        private float _rotationDamping;
+
         private class TweenCurve
         {
             public ProgressCurve Curve;
@@ -56,6 +58,9 @@ namespace Oculus.Interaction
             _animationCurve = curve ?? AnimationCurve.EaseInOut(0, 0, 1, 1);
             TweenToInTime(_pose, 0);
         }
+
+
+        
 
         private void TweenToInTime(Pose target, float time)
         {
@@ -125,6 +130,9 @@ namespace Oculus.Interaction
                 float deltaEase = progress - tweenCurve.PrevProgress;
                 float remainEase = 1.0f - tweenCurve.PrevProgress;
                 float percentTravel = deltaEase / remainEase;
+
+               
+
 
                 tweenCurve.Current.Lerp(in tweenCurve.Target, percentTravel);
                 tweenCurve.PrevProgress = progress;

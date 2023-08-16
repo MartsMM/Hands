@@ -45,20 +45,22 @@ namespace Oculus.Interaction.HandGrab
         [SerializeField]
         private AnimationCurve _travelCurve;
 
+
+
         private const float DEGREES_TO_PERCEIVED_METERS = 0.5f / 360f;
 
         public static PoseTravelData DEFAULT => new PoseTravelData()
         {
             _travelSpeed = 1f,
             _useFixedTravelTime = false,
-            _travelCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f)
+            _travelCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f),
         };
 
         public static PoseTravelData FAST => new PoseTravelData()
         {
             _travelSpeed = 0.1f,
             _useFixedTravelTime = true,
-            _travelCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f)
+            _travelCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f),
         };
 
         public Tween CreateTween(in Pose from, in Pose to)
@@ -69,6 +71,7 @@ namespace Oculus.Interaction.HandGrab
                 float travelDistance = PerceivedDistance(from, to);
                 tweenTime = travelDistance / _travelSpeed;
             }
+
             Tween tween = new Tween(from, tweenTime, tweenTime * 0.5f, _travelCurve);
             tween.MoveTo(to);
             return tween;

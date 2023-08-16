@@ -118,6 +118,9 @@ namespace Oculus.Interaction
         public Vector3 TouchNormal { get; private set; }
 
         public float Radius => _radius;
+        public void SetRadius(float radius){
+            _radius = radius;
+        }
 
         public Vector3 Origin { get; private set; }
 
