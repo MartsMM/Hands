@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1367101885320350828}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.2, y: 0.8148, z: 0.3295}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -114,7 +114,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1367101885320350828}
   serializedVersion: 4
-  m_Mass: 0.2
+  m_Mass: 2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -191,10 +191,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3612164010332937388}
-  - {fileID: 62432940724546721}
+  - {fileID: 449080359839699722}
   m_Father: {fileID: 7643058214890900485}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4458390005978474682
+--- !u!1 &4505529295230399597
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -202,22 +202,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 62432940724546721}
-  - component: {fileID: 9686286149692262}
+  - component: {fileID: 449080359839699722}
+  - component: {fileID: 3679222676521894423}
+  - component: {fileID: 3954470031547932063}
   m_Layer: 0
-  m_Name: PokeInteractor (1)
+  m_Name: PokeInteractor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &62432940724546721
+--- !u!4 &449080359839699722
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4458390005978474682}
+  m_GameObject: {fileID: 4505529295230399597}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.14926, y: 0, z: 0}
@@ -226,13 +227,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3757775623755769358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9686286149692262
+--- !u!114 &3679222676521894423
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4458390005978474682}
+  m_GameObject: {fileID: 4505529295230399597}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d952c175ec3c6554199fd744548ce50a, type: 3}
@@ -243,10 +244,24 @@ MonoBehaviour:
   _candidateTiebreaker: {fileID: 0}
   _maxIterationsPerFrame: 3
   _data: {fileID: 0}
-  _pointTransform: {fileID: 62432940724546721}
-  _radius: 0.005
+  _pointTransform: {fileID: 449080359839699722}
+  _radius: 0.01
   _touchReleaseThreshold: 0.002
   _equalDistanceThreshold: 0.001
+--- !u!114 &3954470031547932063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4505529295230399597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ca06f342cea3cb47b17e2c8e6d23df6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToMatch: {fileID: 7643058214890900485}
+  _pokeInteractor: {fileID: 3679222676521894423}
 --- !u!1 &4701739289475182252
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,8 +482,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3612164010332937388}
   - component: {fileID: 6246795528761260135}
+  - component: {fileID: 5911228045910947835}
   m_Layer: 0
-  m_Name: PokeInteractor
+  m_Name: 'PokeInteractor '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -507,6 +523,20 @@ MonoBehaviour:
   _maxIterationsPerFrame: 3
   _data: {fileID: 0}
   _pointTransform: {fileID: 3612164010332937388}
-  _radius: 0.005
+  _radius: 0.01
   _touchReleaseThreshold: 0.002
   _equalDistanceThreshold: 0.001
+--- !u!114 &5911228045910947835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8723670175266625262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ca06f342cea3cb47b17e2c8e6d23df6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToMatch: {fileID: 7643058214890900485}
+  _pokeInteractor: {fileID: 6246795528761260135}
