@@ -1,9 +1,9 @@
 # OVR Interaction Hands Demo
 Hand Tracking & Interaction SDK Playground
  
-1) Go to Assets/Demo/SampleScene
+1) Go to Assets/Demo/SampleScene and play!
 2) Push the yellow button to win!
- 
-*hint: you need the yellow hammer*
+3) Cant figure it out? Check out TIPS.md for the step-by-step guide.
+
 
 
